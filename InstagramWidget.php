@@ -8,6 +8,7 @@ use Yii;
 class InstagramWidget extends \yii\base\Widget
 {
     public $clientId;
+    public $accessToken;
     public $userName;
     public $tag;
     public $showBy = 'user';
@@ -60,6 +61,7 @@ class InstagramWidget extends \yii\base\Widget
         }
 
         $this->instagram = new Instagram($this->clientId);
+        $this->instagram->setAccessToken($this->accessToken);
 
         $user = false;
         if ($this->showBy == 'user') {
