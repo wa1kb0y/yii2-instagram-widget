@@ -64,32 +64,36 @@ class InstagramWidget extends \yii\base\Widget
         $this->instagram->setAccessToken($this->accessToken);
 
         $user = false;
-        if ($this->showBy == 'user') {
-            $user = $this->findUser($this->userName);
-            $media = $this->findMediaByUser($user, $this->count);
-        } elseif ($this->showBy == 'tag') {
-            $media = $this->findMediaByTag($this->tag, $this->count);
+        try {
+            if ($this->showBy == 'user') {
+                $user = $this->findUser($this->userName);
+                $media = $this->findMediaByUser($user, $this->count);
+            } elseif ($this->showBy == 'tag') {
+                $media = $this->findMediaByTag($this->tag, $this->count);
+            }
+
+            return $this->render('default',
+                [
+                    'user' => $user,
+                    'media' => $media,
+                    'userName' => $this->userName,
+                    'width' => $this->width,
+                    'imgWidth' => $this->imgWidth,
+                    'inline' => $this->inline,
+                    'isShowToolbar' => $this->isShowToolbar,
+                    'imgRes' => $this->imgRes,
+
+                    'title' => InstagramWidget::t('messages', 'title'),
+                    'buttonFollow' => InstagramWidget::t('messages', 'buttonFollow'),
+                    'statPosts' => InstagramWidget::t('messages', 'statPosts'),
+                    'statFollowers' => InstagramWidget::t('messages', 'statFollowers'),
+                    'statFollowing' => InstagramWidget::t('messages', 'statFollowing'),
+                    'imgEmpty' => InstagramWidget::t('messages', 'imgEmpty'),
+                ]
+            );
+        } catch (\Exception $e) {
+            return '';
         }
-
-        return $this->render('default',
-            [
-                'user' => $user,
-                'media' => $media,
-                'userName' => $this->userName,
-                'width' => $this->width,
-                'imgWidth' => $this->imgWidth,
-                'inline' => $this->inline,
-                'isShowToolbar' => $this->isShowToolbar,
-                'imgRes' => $this->imgRes,
-
-                'title' => InstagramWidget::t('messages', 'title'),
-                'buttonFollow' => InstagramWidget::t('messages', 'buttonFollow'),
-                'statPosts' => InstagramWidget::t('messages', 'statPosts'),
-                'statFollowers' => InstagramWidget::t('messages', 'statFollowers'),
-                'statFollowing' => InstagramWidget::t('messages', 'statFollowing'),
-                'imgEmpty' => InstagramWidget::t('messages', 'imgEmpty'),
-            ]
-        );
     }
 
     public function findUser($userName)
