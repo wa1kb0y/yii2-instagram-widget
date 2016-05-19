@@ -12,7 +12,7 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-        "cosenary/instagram": "dev-master"
+        "cosenary/instagram": "*"
     },
     "autoload": {
         "psr-4": {
