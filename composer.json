@@ -12,11 +12,17 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-        "cosenary/instagram": "*"
+        "cosenary/instagram": "dev-master"
     },
     "autoload": {
         "psr-4": {
             "kmarenov\\instagram\\": ""
         }
-    }
+    },
+    "repositories": [                                                                                                                                                                
+        {                                                                                                                                                                            
+            "url": "https://github.com/florianbeer/Instagram-PHP-API.git",                                                                                                           
+            "type": "git"                                                                                                                                                            
+        }                                                                                                                                                                            
+    ],
 }
