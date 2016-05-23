@@ -46,7 +46,7 @@ $widgetId = $this->context->id;
         foreach ($media->data as $item) {
             echo '<a href="' . $item->link . '" class="image" target="_blank"><img src="' . $item->images->$imgRes->url . '" alt="" /></a>';
         }
-        echo '<div class="clear">&nbsp;</div>';
+        echo '<div class="clear"></div>';
         echo '</div>';
     } else {
         echo '<div class="empty">' . $imgEmpty . '</div>';
@@ -69,16 +69,13 @@ $css = <<<CSS
             width: {$width}px;
             border: 1px solid #c3c3c3;
             background: #f9f9f9;
-            border-radius: 5px 5px 5px 5px !important;
-            -webkit-border-radius: 5px 5px 5px 5px !important;
-            -moz-border-radius: 5px 5px 5px 5px !important;
             overflow: hidden;
         }
 
         .instagram-widget a.title:link, .instagram-widget a.title:visited {
             display: block;
             height: 33px;
-            background: #46729b url(data:image/gif;base64,R0lGODlhAQAhAMQAAFR/p0hznVN+plB8pFJ8pVN+p0dynFB7pEp2n096o0x3n0x3oFN9pUl1nkp2nlJ9pkZxm0x4oFB8o0h0nUt3n056ok14oUZym1F8pU55oU97o055ok96ogAAAAAAAAAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4zLWMwMTEgNjYuMTQ1NjYxLCAyMDEyLzAyLzA2LTE0OjU2OjI3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzYgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAxNC0wMS0yOFQyMDowMDo1NyswNzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMTQtMDEtMjhUMjA6MDE6MTErMDc6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMTQtMDEtMjhUMjA6MDE6MTErMDc6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvZ2lmIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQzMjhFRkNGODgxQzExRTM5OUQ4OURBQTU4OUI5QjJFIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQzMjhFRkQwODgxQzExRTM5OUQ4OURBQTU4OUI5QjJFIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDMxMjBDMjI4ODFDMTFFMzk5RDg5REFBNTg5QjlCMkUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDMxMjBDMjM4ODFDMTFFMzk5RDg5REFBNTg5QjlCMkUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQAAAAAACwAAAAAAQAhAAAFGiAgFoLAPAQ2HJKWcNWWWdGiUIjTTEFgXJAQADs=) repeat-x;
+            background: #fa1964;
             text-decoration: none;
         }
 
@@ -95,9 +92,10 @@ $css = <<<CSS
             width: {$title_text_width}px;
             height: 25px;
             overflow: hidden;
-            margin: 5px 0 0 0;
+            margin: 8px 0 0 0;
             color: #FFF;
             font-size: 18px;
+            font-weight: bold;
             white-space: nowrap;
             {$title_text_display}
         }
